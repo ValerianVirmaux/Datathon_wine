@@ -1,26 +1,27 @@
 # ----------------------------------
 
-# EXPLICATION 
+# EXPLANATION 
 
-# This dataset is related to wine.
-# It is about a white variants of the Portuguese "Vinho Verde".
+# This dataset deals with our favourite beverage: wine.
+# It is about a white variant of the Portuguese "Vinho Verde".
 # Vinho verde is a unique product from the Minho (northwest) region of Portugal. 
-# Medium in alcohol, is it particularly appreciated due to its freshness (specially in the summer).
+# Medium in alcohol, it is particularly appreciated due to its freshness (specially in the summer).
 
-# The goal is to model wine quality based on physicochemical tests.
-# We only have physicochemical and sensory.
+# The goal is to model wine quality based on physicochemical tests and sensory data.
 # There is no data about grape types, brand, selling price, etc.
 # As the class is ordered, you could choose to do a regression instead of a classification.
 
 # The prediction will have to be uploaded in one of your public repository in your github
 
-# 5.30pm is the dead line !
+# Deadline is at 5.30pm!
 
-# Every minute late will see your final accuracy decreasing by 0.05
-# Example : 20 minutes late = 0.1 x 20 = 2
-# If your final accuracy was 86%, it will be decreased to 84%
+# For every minute of late delivery your final accuracy will be decreased by 0.05
+# For example If your final accuracy is 86% but you deliver 20 minutes late then
+# your final accuracy will be 0.86 - (0.05 x 20 = 1) = 0.85
+#
+# No extra point for early delivery.
 
-# But enought talking, let's start !
+# Let's start !
 
 # ----------------------------------
 
@@ -55,7 +56,7 @@ ggplot(df, aes(quality)) +
         x ="Quality of the wine",
         y = "")
   
-# Run a dump model
+# Run model
 t.control <- trainControl(method = "cv", number = 10)
 model <- train(quality ~ ., data = df, methode = "rf", trcontrol = t.control)
 
